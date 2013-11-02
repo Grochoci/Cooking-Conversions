@@ -9,9 +9,10 @@ itself!
 
 Conversions Include (in various units):
 
-    Weight
+    Mass
     Volume
     Temperature
+    Length
     Cups & Spoons
     Eggs
     Garlic
