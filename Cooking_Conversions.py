@@ -104,22 +104,68 @@ def temperature():
     """ Converstions between different units of Temperature.
     """
     
-    print("1) Metric to Imperial \n2) Imperial to Metric")
+    print("1) Celsius \n2) Fahrenheit \n3) Imperial")
     
     return input("Please choose the corresponding number" +
                        " for the intended category: ")
 
 
-def temp_metric_us():
-    """ Conversion from Metric to U.S Units.
+def cel():
+    """ Conversion from Celsius.
     """
-    pass
+    user_input = input("Please enter temperature: ")
+    
+    conv_fah = int(round((((int(user_input) * 9) / 5) + 32) / 5) * 5)
+    
+    if int(user_input) == 105:
+        conv_imp = "1/3"
+    elif int(user_input) == 120:
+        conv_imp = "1/2"
+    elif int(user_input) < 105:
+        conv_imp = "not possible in"
+    else:
+        conv_imp = int((conv_fah / 25) % 10)
+        
+    return (user_input + " Celsius is " + str(conv_fah) + 
+            " Fahrenheit, or " + str(conv_imp) + " Gas Mark(Imperial).")
 
 
-def temp_us_metric():
-    """ Conversion from U.S Units to Metric.
+def fah():
+    """ Conversion from Fahrenheit.
     """
-    pass
+    user_input = input("Please enter temperature: ")
+    
+    if int(user_input) == 225:
+        conv_imp = "1/3"
+    elif int(user_input) == 250:
+        conv_imp = "1/2"
+    elif int(user_input) < 225:
+        conv_imp = "not possible in"
+    else:
+        conv_imp = int((int(user_input) / 25) % 10)
+    conv_cel = int(round((((int(user_input) - 32) * 5) / 9) / 5) * 5)
+    
+    return (user_input + " Fahrenheit is " + str(conv_cel) + 
+            " Celsius, or " + str(conv_imp) + " Gas Mark(Imperial).")
+    
+
+def imp():
+    """ Conversion from Imperial.
+    """
+    user_input = input("Please enter temperature: ")
+    
+    if user_input == "1/3":
+        conv_cel = 105
+        conv_fah = 225
+    elif user_input == "1/2":
+        conv_cel = 120
+        conv_fah = 250
+    else:
+        conv_fah = (10 + int(user_input)) * 25
+        conv_cel = int(round((((conv_fah - 32) * 5) / 9) / 5) * 5)
+    
+    return (user_input + " Gas Mark(Imperial) is " + str(conv_cel) + 
+            " Celsius, or " + str(conv_fah) + " Fahrenheit.")
 
 
 # __________________________________________________
@@ -131,18 +177,39 @@ def length():
     pass
 
 
+def cm_in():
+    """ Conversion from centimeters or inches.
+    """
+    pass
+
+
+def in_cm():
+    """ Conversion from inches to centimeters.
+    """
+    pass
+
+
+# __________________________________________________
+# ================ CUP/SPOONS FUNCTIONS ============
+# __________________________________________________
 def cups_and_spoons():
     """ Conversions between Volume and Cups and/or Spoons.
     """
     pass
 
-    
+
+# __________________________________________________
+# ================ EGG FUNCTIONS ===================
+# __________________________________________________
 def eggs():
     """ Conversions for Egg Whites and Egg Yolks between Mass.
     """
     pass
 
 
+# __________________________________________________
+# ================ GARLIC FUNCTIONS ================
+# __________________________________________________
 def garlic():
     """ Conversions for fresh Garlic between Units, Mass and Cups
     and/or Spoons, and powdered.
@@ -150,6 +217,9 @@ def garlic():
     pass
 
 
+# __________________________________________________
+# ================ ONION FUNCTIONS =================
+# __________________________________________________
 def onion():
     """ Conversions for fresh Onion between Units, Mass and Cups
     and/or Spoons, and powdered.
@@ -157,6 +227,9 @@ def onion():
     pass
 
 
+# __________________________________________________
+# ================ BASIL FUNCTIONS =================
+# __________________________________________________
 def basil():
     """ Conversions for fresh Basil between Units, Mass, and Cups
     and/or Spoons, and dried.
@@ -164,9 +237,21 @@ def basil():
     pass
 
 
+# __________________________________________________
+# ================ OREGANO FUNCTIONS ===============
+# __________________________________________________
 def oregano():
     """ Conversions for fresh Oregano between Units, Mass, and Cups
     and/or Spoons, and dried.
+    """
+    pass
+
+
+# __________________________________________________
+# ================ BUTTER FUNCTIONS ================
+# __________________________________________________
+def butter():
+    """ Conversions for butter between sticks, Cups, and Mass.
     """
     pass
 
@@ -180,7 +265,8 @@ if __name__ == "__main__":
         if user_input.upper() == "HELP":
             print("1) Mass \n2) Volume \n3) Temperature \n4)" +
                   " Length \n5) Cups and Spoons \n6) Eggs \n7)" +
-                  " Garlic \n8) Onions \n9) Basil \n10) Oregano")
+                  " Garlic \n8) Onions \n9) Basil \n10) Oregano" +
+                  "\n11) Butter")
             
         if user_input.upper() == "MASS":
             conv_type = mass()
@@ -197,4 +283,9 @@ if __name__ == "__main__":
         if user_input.upper() == "TEMPERATURE":
             conv_type = temperature()
             if conv_type == "1":
-                print(temp_metric_us())
+                print(cel())
+            if conv_type == "2":
+                print(fah())
+            if conv_type == "3":
+                print(imp())
+                
