@@ -113,6 +113,7 @@ def temperature():
 def cel():
     """ Conversion from Celsius.
     """
+    
     user_input = input("Please enter temperature: ")
     
     conv_fah = int(round((((int(user_input) * 9) / 5) + 32) / 5) * 5)
@@ -133,6 +134,7 @@ def cel():
 def fah():
     """ Conversion from Fahrenheit.
     """
+    
     user_input = input("Please enter temperature: ")
     
     if int(user_input) == 225:
@@ -152,6 +154,7 @@ def fah():
 def imp():
     """ Conversion from Imperial.
     """
+    
     user_input = input("Please enter temperature: ")
     
     if user_input == "1/3":
@@ -174,19 +177,31 @@ def imp():
 def length():
     """ Converstions between different units of Length.
     """
-    pass
+    
+    print("1) Centimeters \n2) Inches")
+    
+    return input("Please choose the corresponding number" +
+                       " for the intended category: ")
 
 
 def cm_in():
     """ Conversion from centimeters or inches.
     """
-    pass
+    
+    user_input = input("Please enter length: ")
+    conv_in = round(int(user_input) * 0.39)
+    
+    return (user_input + " Centimeters is " + str(conv_in) + " Inches.")
 
 
 def in_cm():
     """ Conversion from inches to centimeters.
     """
-    pass
+    
+    user_input = input("Please enter length: ")
+    conv_cm = round(int(user_input) * 2.54)
+    
+    return (user_input + " Inches is " + str(conv_cm) + " Centimeters.")
 
 
 # __________________________________________________
@@ -288,4 +303,11 @@ if __name__ == "__main__":
                 print(fah())
             if conv_type == "3":
                 print(imp())
+        
+        if user_input.upper() == "LENGTH":
+            conv_type = length()
+            if conv_type == "1":
+                print(cm_in())
+            if conv_type == "2":
+                print(in_cm())
                 
