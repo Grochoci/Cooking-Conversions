@@ -275,27 +275,22 @@ def butter():
 if __name__ == "__main__":
     forever = True
     while forever:
-        user_input = main_screen()
         
-        if user_input.upper() == "HELP":
             print("1) Mass \n2) Volume \n3) Temperature \n4)" +
                   " Length \n5) Cups and Spoons \n6) Eggs \n7)" +
                   " Garlic \n8) Onions \n9) Basil \n10) Oregano" +
                   "\n11) Butter")
             
-        if user_input.upper() == "MASS":
             conv_type = mass()
             if conv_type == "1":
                 print(mass_metric_us())
             if conv_type == "2":
                 print(mass_us_metric())
         
-        if user_input.upper() == "VOLUME":
             conv_type = volume()
             if conv_type == "1":
                 print(volume_metric_us())
         
-        if user_input.upper() == "TEMPERATURE":
             conv_type = temperature()
             if conv_type == "1":
                 print(cel())
@@ -304,7 +299,6 @@ if __name__ == "__main__":
             if conv_type == "3":
                 print(imp())
         
-        if user_input.upper() == "LENGTH":
             conv_type = length()
             if conv_type == "1":
                 print(cm_in())
