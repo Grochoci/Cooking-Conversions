@@ -11,8 +11,8 @@ Conversions Include (in various units):
 
     Weight
     Volume
-    Cups
-    Spoons
+    Temperature
+    Cups & Spoons
     Eggs
     Garlic
     Onions
